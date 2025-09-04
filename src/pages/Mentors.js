@@ -1,6 +1,7 @@
+//Mentors.js
+
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
-import { Star } from "lucide-react";
 
 export default function Mentors() {
   const recentMentors = [
@@ -32,7 +33,6 @@ export default function Mentors() {
       follow: true,
     },
   ];
-
   const mentors = [
     {
       name: "Jessica Jane",

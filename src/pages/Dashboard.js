@@ -1,15 +1,13 @@
-import Header from "../components/Header";
-import ProgressBar from "../components/ProgressBar";
+//Dashboard.js
 import ActivityChart from "../components/ActivityChart";
 import { Button } from "../components/ui/button";
 import { Progress } from "../components/ui/progress";
 import Calendar from "../components/Calendar";
-import TodayTask from "../components/TodayTask";
 import { Card, CardContent } from "../components/ui/card";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import { Bell } from "lucide-react"; // 🔔 Notification Icon
 import "react-circular-progressbar/dist/styles.css";
-import Sidebar from "../components/Sidebar";
+
 // ---- Running Task Card ----
 function RunningTaskCard() {
   const runningTasks = 65;
@@ -18,36 +16,35 @@ function RunningTaskCard() {
 
   return (
     <Card
-  className="!bg-black text-white rounded-2xl p-6 shadow-lg flex flex-col justify-start"
-  style={{ width: 220, height: 210 }}
->
-  <CardContent className="p-0 flex flex-col h-full justify-start">
-    <h3 className="text-gray-300 text-lg mb-1">Running Task</h3>
+      className="!bg-black text-white rounded-2xl p-6 shadow-lg flex flex-col justify-start"
+      style={{ width: 220, height: 210 }}
+    >
+      <CardContent className="p-0 flex flex-col h-full justify-start">
+        <h3 className="text-gray-300 text-lg mb-1">Running Task</h3>
 
-    <div className="text-4xl font-bold -mt-1">{runningTasks}</div>
+        <div className="text-4xl font-bold -mt-1">{runningTasks}</div>
 
-    <div className="flex items-center justify-between mt-3">
-      <div className="w-16 h-16">
-        <CircularProgressbar
-          value={progressPercent}
-          text={`${progressPercent}%`}
-          styles={buildStyles({
-            textColor: "#ffffff",
-            pathColor: "#6366f1",
-            trailColor: "#222222",
-            textSize: "20px",
-          })}
-        />
-      </div>
+        <div className="flex items-center justify-between mt-3">
+          <div className="w-16 h-16">
+            <CircularProgressbar
+              value={progressPercent}
+              text={`${progressPercent}%`}
+              styles={buildStyles({
+                textColor: "#ffffff",
+                pathColor: "#6366f1",
+                trailColor: "#222222",
+                textSize: "20px",
+              })}
+            />
+          </div>
 
-      <div className="flex flex-col items-end ml-3">
-        <span className="text-white text-lg font-semibold">{totalTasks}</span>
-        <span className="text-gray-400 text-sm mt-1">Task</span>
-      </div>
-    </div>
-  </CardContent>
-</Card>
-
+          <div className="flex flex-col items-end ml-3">
+            <span className="text-white text-lg font-semibold">{totalTasks}</span>
+            <span className="text-gray-400 text-sm mt-1">Task</span>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 }
 
@@ -86,7 +83,6 @@ export default function Dashboard() {
             </CardContent>
           </Card>
         </div>
-
         {/* Monthly Mentors */}
         <h3 className="mt-8 mb-4 font-semibold text-lg">Monthly Mentors</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
